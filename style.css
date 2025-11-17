@@ -1,0 +1,32 @@
+.row {
+    margin: 70px 0;
+    margin-bottom: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.col {
+    justify-content: center;
+    margin: 5px;
+}
+
+.carousel-inner {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.col-md-12 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+.pagination {
+    justify-content: center;
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingkaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="template/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="template/dist/css/adminlte.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">SIMAK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="statistik.html">Statistik</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page.html">Simpan Akun</a>
+              </li>
+            </ul>
+            <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-outline-success" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">User</a>
+            <a href="index.html" class="btn btn-outline-danger" type="submit">Log Out</a>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">USER</h4>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <h5>Username</h5>
+          <p>tegar</p>
+          <h5>Email</h5>
+          <p>tegar@gmail.com</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-12">
+        <div class="card">
+        <div class="card-header">
+        <h5 class="card-title">
+            <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="statistik.html" class="btn btn-outline-success" type="submit">Diagram Batang</a>
+                <a href="lingkaran.html" class="btn btn-outline-danger" type="submit">Diagram Lingkaran</a>
+                </form>
+        </h5>
+        <div class="card-tools">
+            <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button onclick="exportData()" class="btn btn-outline-success">Export Excel</a>
+                <button onclick="generatePDF()" class="btn btn-outline-danger">Export PDF</button>
+                </form>
+        </div>
+        </div>
+        </div>
+        
+        <div class="card-body">
+        <div class="row">
+        <div class="col-md-8">
+        <p class="text-center">
+        <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+        </p>
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        
+        <canvas id="myChart2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 486px;" width="486" height="250" class="chartjs-render-monitor">
+            <script>
+                var ctx = document.getElementById("myChart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Surabaya", "Gresik", "Sidoarjo", "Pasuruan"],
+                        datasets: [{
+                            label: 'UMK JAWA TIMUR 2022',
+                            data: [4375479, 4372030, 4368581, 4365133],
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+                function generatePDF() {
+                    const canvas = document.getElementById("myChart2");
+                    // create image
+                    const image = canvas.toDataURL("image/png");
+                    // image to pdf
+                    let pdf = new jsPDF();
+                    pdf.setFontSize(20);
+                    pdf.addImage(image, 'JPEG', 10, 10, 180, 180);
+                    pdf.save("chart.pdf");
+                }
+            </script>
+        </canvas>
+        </div>
+        
+        </div>
+        
+        <div class="col-md-4">
+        <p class="text-center">
+        <strong>Goal Completion</strong>
+        </p>
+        <div class="progress-group">
+        Add Products to Cart
+        <span class="float-right"><b>160</b>/200</span>
+        <div class="progress progress-sm">
+        <div class="progress-bar bg-primary" style="width: 80%"></div>
+        </div>
+        </div>
+        
+        <div class="progress-group">
+        Complete Purchase
+        <span class="float-right"><b>310</b>/400</span>
+        <div class="progress progress-sm">
+        <div class="progress-bar bg-danger" style="width: 75%"></div>
+        </div>
+        </div>
+        
+        <div class="progress-group">
+        <span class="progress-text">Visit Premium Page</span>
+        <span class="float-right"><b>480</b>/800</span>
+        <div class="progress progress-sm">
+        <div class="progress-bar bg-success" style="width: 60%"></div>
+        </div>
+        </div>
+        
+        <div class="progress-group">
+        Send Inquiries
+        <span class="float-right"><b>250</b>/500</span>
+        <div class="progress progress-sm">
+        <div class="progress-bar bg-warning" style="width: 50%"></div>
+        </div>
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        <div class="card-footer">
+        <div class="row">
+        <div class="col-sm-3 col-6">
+        <div class="description-block border-right">
+        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+        <h5 class="description-header">$35,210.43</h5>
+        <span class="description-text">TOTAL REVENUE</span>
+        </div>
+        
+        </div>
+        
+        <div class="col-sm-3 col-6">
+        <div class="description-block border-right">
+        <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
+        <h5 class="description-header">$10,390.90</h5>
+        <span class="description-text">TOTAL COST</span>
+        </div>
+        
+        </div>
+        
+        <div class="col-sm-3 col-6">
+        <div class="description-block border-right">
+        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
+        <h5 class="description-header">$24,813.53</h5>
+        <span class="description-text">TOTAL PROFIT</span>
+        </div>
+        
+        </div>
+        
+         <div class="col-sm-3 col-6">
+        <div class="description-block">
+        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
+        <h5 class="description-header">1200</h5>
+        <span class="description-text">GOAL COMPLETIONS</span>
+        </div>
+        
+        </div>
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        </div>
+
+        <div class="card-body">
+        <table class="table" id="tblStocks" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Company</th>
+                <th>Group</th>
+                <th>Prev Close($)</th>
+                <th>Current Price($)</th>
+                <th>Change(%)</th>
+              </tr>
+              <tr>
+                <td>Life HealthCare INC</td>
+                <td>A</td>
+                <td>35.58</td>
+                <td>38.45</td>
+                <td>+8.06</td>
+              </tr>
+              <tr>
+                <td>Den Networks Ltd</td>
+                <td>A</td>
+                <td>72.55</td>
+                <td>77.60</td>
+                <td>+6.96</td>
+              </tr>
+              <tr>
+                <td>RMG Cements</td>
+                <td>B</td>
+                <td>140</td>
+                <td>135</td>
+                <td>-3.57</td>
+              </tr>
+        </table>
+        </div>
+</body>
+</html>

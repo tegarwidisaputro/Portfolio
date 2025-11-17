@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="template/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="template/dist/css/adminlte.min.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">SIMAK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="statistik.html">Statistik</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page.html">Simpan Akun</a>
+              </li>
+            </ul>
+            <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-outline-success" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">User</a>
+            <a href="index.html" class="btn btn-outline-danger" type="submit">Log Out</a>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">USER</h4>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <h5>Username</h5>
+          <p>tegar</p>
+          <h5>Email</h5>
+          <p>tegar@gmail.com</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+          <div class="card">
+            <div class="card-body"><a href="#"></a>
+<input class="form-control btn btn-primary text-white" list="datalistOptions" id="exampleDataList" placeholder="DETAIL">
+<datalist id="datalistOptions">
+  <option value="Instagram">
+  <option value="Facebook">
+  <option value="Twitter">
+  <option value="Line">
+  <option value="TikTok">
+</datalist> 
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="card">
+            <div class="card-body">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">EDIT</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Recipient:</label>
+                              <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Message:</label>
+                              <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="card">
+              <div class="card-body">
+                  <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    HAPUS
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">TAMBAH DATA</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Recipient:</label>
+                              <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Message:</label>
+                              <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="card-body">
+      <table class="table table-bordered border-success">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Platform</th>
+            <th scope="col">Kategori</th>
+            <th scope="col">Auth Login</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Instagram</td>
+            <td>Utama</td>
+            <td>@gmail.com</td>
+            <td>tegar</td>
+            <td>tegar@gmail.com</td>
+            <td>12345678</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Facebook</td>
+            <td>Utama</td>
+            <td>@gmail.com</td>
+            <td>tegar</td>
+            <td>tegar@gmail.com</td>
+            <td>12345678</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Twitter</td>
+            <td>Utama</td>
+            <td>@gmail.com</td>
+            <td>tegar</td>
+            <td>tegar@gmail.com</td>
+            <td>12345678</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Line</td>
+            <td>Utama</td>
+            <td>@gmail.com</td>
+            <td>tegar</td>
+            <td>tegar@gmail.com</td>
+            <td>12345678</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>TikTok</td>
+            <td>Utama</td>
+            <td>@gmail.com</td>
+            <td>tegar</td>
+            <td>tegar@gmail.com</td>
+            <td>12345678</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+</body>
+</html>

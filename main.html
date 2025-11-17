@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="template/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="template/dist/css/adminlte.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
+
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">SIMAK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="statistik.html">Statistik</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page.html">Simpan Akun</a>
+              </li>
+            </ul>
+            <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-outline-success" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">User</a>
+            <a href="index.html" class="btn btn-outline-danger" type="submit">Log Out</a>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">USER</h4>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <h5>Username</h5>
+          <p>tegar</p>
+          <h5>Email</h5>
+          <p>tegar@gmail.com</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <canvas id="myChart">
+                <script>
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Surabaya", "Gresik", "Sidoarjo", "Pasuruan", "Mojokerto"],
+                        datasets: [{
+                            label: 'UMK JAWA TIMUR 2022',
+                            data: [4375479, 4372030, 4368581, 4365133, 4354787],
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
+            </canvas>
+            <div class="card-body">
+              <h5 class="card-title">Diagram Batang</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        
+            <div class="col">
+              <div class="card h-100">
+                
+                <canvas id="myChart2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 486px;" width="486" height="250" class="chartjs-render-monitor">
+                      <script>
+                          var ctx = document.getElementById("myChart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Surabaya", "Gresik", "Sidoarjo", "Pasuruan", "Mojokerto"],
+                        datasets: [{
+                            label: 'UMK JAWA TIMUR 2022',
+                            data: [4375479, 4372030, 4368581, 4365133, 4354787],
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                      </script>
+                  </canvas>
+                <div class="card-body">
+                  <h5 class="card-title">Diagram Lingkaran</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-bordered border-success">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Platform</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">Auth Login</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Instagram</td>
+                    <td>Utama</td>
+                    <td>@gmail.com</td>
+                    <td>tegar</td>
+                    <td>tegar@gmail.com</td>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Facebook</td>
+                    <td>Utama</td>
+                    <td>@gmail.com</td>
+                    <td>tegar</td>
+                    <td>tegar@gmail.com</td>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Twitter</td>
+                    <td>Utama</td>
+                    <td>@gmail.com</td>
+                    <td>tegar</td>
+                    <td>tegar@gmail.com</td>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Line</td>
+                    <td>Utama</td>
+                    <td>@gmail.com</td>
+                    <td>tegar</td>
+                    <td>tegar@gmail.com</td>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>TikTok</td>
+                    <td>Utama</td>
+                    <td>@gmail.com</td>
+                    <td>tegar</td>
+                    <td>tegar@gmail.com</td>
+                    <td>12345678</td>
+                  </tr>
+                </tbody>
+              </table>
+                </div>
+</body>
+</html>
